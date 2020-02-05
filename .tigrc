@@ -1,0 +1,17 @@
+# User-defined internal command that reloads ~/.tigrc
+#bind generic S :source ~/.tigrc
+# git pull & push in status
+bind status p !git pull --rebase
+bind status P !git push
+
+# git rebase --continue in status
+# bind status C !git rebase --continue
+# remove file in status
+bind status D !?@rm %(file)
+
+# git stash in stash
+bind status S !?git stash
+bind main <Esc>r !git rebase -i %(commit)^
+bind main <Esc>c !git checkout %(commit)
+set split-view-width = 80%
+color cursor magenta default underline
